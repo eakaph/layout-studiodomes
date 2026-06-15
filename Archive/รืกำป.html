@@ -6,7 +6,7 @@
 <title>Kitchen Layout Maker — Studio DoMES</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Chivo:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Noto+Sans+Thai:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Chivo:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#F5F0E4;
@@ -67,7 +67,7 @@
   }
   .head-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 24px;max-width:var(--maxw);margin:0 auto;}
   .head-logo{height:34px;}
-  .head-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end;}
+  .head-right{display:flex;align-items:center;gap:22px;}
   .head-tag{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
   .head-link{font-size:.82rem;letter-spacing:.04em;text-decoration:none;color:var(--ink);opacity:.8;transition:opacity .2s;}
   .head-link:hover{opacity:1;}
@@ -77,7 +77,7 @@
     transition:background .2s,color .2s;
   }
   .head-cta:hover{background:var(--ink);color:var(--cream);}
-  @media(max-width:680px){.head-tag{display:none;}.head-link{display:none;}.head-cta{padding:8px 14px;}.head-right{gap:12px;}}
+  @media(max-width:680px){.head-tag{display:none;}}
 
   /* ---------- Hero ---------- */
   .hero{padding:70px 0 30px;}
@@ -223,9 +223,7 @@
     text-align:right;border-left:1px solid var(--line);padding-left:18px;
   }
   .badge .big{font-family:"Marcellus";font-size:1.55rem;color:var(--ink);line-height:1;}
-  .badge .big2{font-family:"Marcellus";font-size:1.2rem;color:var(--ink);line-height:1;margin-top:12px;}
   .badge .lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:5px;}
-  .rank-note{font-size:.74rem;color:var(--muted);margin:14px 0 0;line-height:1.5;}
 
   .plan-stage{margin:22px 0 6px;background:var(--cream);border:1px solid var(--line-soft);border-radius:12px;padding:8px;}
   .plan-stage svg{display:block;width:100%;height:auto;}
@@ -304,16 +302,6 @@
     *{animation:none!important;transition:none!important;}
     html{scroll-behavior:auto;}
   }
-
-  /* ---------- Language toggle ---------- */
-  .lang-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
-  .lang-toggle button{font-family:"Chivo","Noto Sans Thai",sans-serif;font-size:.76rem;letter-spacing:.04em;cursor:pointer;background:transparent;border:none;padding:7px 13px;color:var(--muted);transition:.15s;}
-  .lang-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--cream);}
-
-  /* ---------- Thai language mode (single sans-serif Thai font) ---------- */
-  body.lang-th, body.lang-th *{font-family:"Noto Sans Thai",system-ui,sans-serif;}
-  body.lang-th h1{line-height:1.25;}
-  body.lang-th .eyebrow,body.lang-th .head-tag{letter-spacing:.08em;}
 </style>
 </head>
 <body>
@@ -329,12 +317,8 @@
       </svg>
     </a>
     <div class="head-right">
-      <a class="head-link" href="#maker" data-i18n="nav_maker">The maker</a>
+      <a class="head-link" href="#maker">The maker</a>
       <a class="head-cta" href="https://studiodomes.co" target="_blank" rel="noopener">studiodomes.co ↗</a>
-      <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language / ภาษา">
-        <button data-lang="en" aria-pressed="true">EN</button>
-        <button data-lang="th" aria-pressed="false">ไทย</button>
-      </div>
     </div>
   </div>
 </header>
@@ -351,7 +335,7 @@
           <g><path d="m44.2222,41.8331c-.8252-1.8916-1.9591-3.443-3.3708-4.6125-1.4086-1.1668-3.0663-2.0176-4.9269-2.5288-1.8461-.5071-3.8166-.7645-5.8573-.7645-.7477,0-1.5645.0141-2.4274.0424l-2.4812.0837c-.7964.0283-1.5054.056-2.127.0837-.6148.0283-1.0533.0414-1.3155.0414-.1517,0-.3506-.0026-.5986-.01-.248-.0068-.4892-.0172-.7263-.0314l-1.2186-.056v.4438l.012.0408c.0796.2794.1581.642.2334,1.0773.0748.4391.1408.9832.1957,1.6174.0544.6405.0963,1.417.1245,2.307.0278.8984.0414,1.9481.0414,3.1196v13.6255c0,1.1721-.0136,2.2144-.0414,3.0987-.0282.8764-.0701,1.6419-.1245,2.2751-.0549.6284-.1209,1.1616-.1957,1.5844-.0748.4217-.1533.778-.2334,1.0585l-.012.0408v.4301h.304c.3872,0,.9351.0173,1.6284.0518.7037.0346,1.4536.0733,2.2484.1151.7964.0419,1.5891.0801,2.3787.1152.8079.0355,1.4729.0528,2.0328.0528,1.5724,0,3.118-.1287,4.5931-.3814,1.4808-.2538,2.8941-.662,4.2006-1.2124,1.3113-.5531,2.5247-1.2679,3.6073-2.1244,1.0884-.8602,2.0365-1.9094,2.8188-3.1186.7807-1.2056,1.3955-2.6147,1.8277-4.1865.4306-1.5687.6493-3.3561.6493-5.3131,0-2.7355-.417-5.0787-1.2395-6.9655Zm-3.8574,12.6269c-.3632,1.4164-.8618,2.6267-1.4965,3.6313-.6353,1.0047-1.3746,1.8246-2.2186,2.4593-.8445.6352-1.7445,1.1339-2.7,1.4965-.956.3631-1.9465.6106-2.9721.743-1.0255.1329-2.027.1989-3.0034.1989-.2376,0-.5306-.0068-.8791-.021-.349-.0136-.7048-.0314-1.0674-.0523-.3631-.0209-.7085-.0487-1.036-.0837-.3281-.0346-.5897-.0659-.7849-.0942-.056-.8508-.1047-1.9182-.1465-3.2023-.0419-1.2835-.0733-2.623-.0942-4.0186-.0209-1.3949-.0387-2.7554-.0523-4.0813-.0142-1.3254-.021-2.4556-.021-3.3907,0-.4463.0032-.9591.0105-1.5383.0068-.5787.0136-1.1857.0209-1.8209.0068-.6347.0136-1.2799.021-1.9361.0068-.6556.0172-1.2976.0314-1.9255.0277-1.4651.0554-2.9789.0837-4.5418.2647-.0136.6033-.0382,1.0151-.0733.4113-.0345.8508-.0628,1.3186-.0837.4672-.0209.9382-.0419,1.4128-.0628.474-.0209.8999-.0314,1.2767-.0314,1.9114,0,3.6031.2967,5.0755.8895,1.4719.5934,2.7068,1.462,3.7046,2.6058.9973,1.1444,1.7545,2.5503,2.2709,4.2174.516,1.6676.7744,3.5686.7744,5.7034,0,1.9256-.1815,3.5969-.5441,5.0128Z" fill="#070606"/><path d="m70.7724,49.0974c-.607-1.4144-1.452-2.6314-2.51-3.6188-1.0575-.9853-2.3128-1.756-3.7313-2.2908-1.417-.5337-2.9491-.8048-4.5549-.8048-1.6357,0-3.1871.2894-4.613.8592-1.4253.5704-2.6801,1.3735-3.7292,2.3871-1.0496,1.014-1.8858,2.2264-2.4849,3.6026-.6002,1.3792-.9047,2.8951-.9047,4.5062,0,1.7513.3113,3.3519.9256,4.7574.6133,1.4065,1.4615,2.6199,2.52,3.6067,1.0575.9858,2.3096,1.7535,3.7219,2.2809,1.4101.5264,2.9312.7938,4.5224.7938,1.8743,0,3.5592-.315,5.007-.9351,1.4473-.6206,2.6885-1.4646,3.6889-2.5074,1.001-1.0439,1.7691-2.2615,2.2835-3.6188.5128-1.3536.7733-2.7842.7733-4.2519,0-1.7493-.3076-3.353-.9146-4.7663Zm-4.0777,9.266c-.3349,1.0607-.8026,1.9606-1.4023,2.7-.6002.7399-1.3154,1.305-2.1453,1.6953-.8304.3909-1.7409.5861-2.7314.5861-1.2699,0-2.3829-.2685-3.3383-.8058-.956-.5369-1.755-1.2836-2.3965-2.2395-.642-.9555-1.1271-2.0826-1.4546-3.3802-.3281-1.2977-.4919-2.7-.4919-4.207,0-1.3395.1674-2.5356.5023-3.5895.3349-1.0533.8058-1.9428,1.4128-2.6686.607-.7252,1.3217-1.2798,2.1453-1.6639.8231-.3835,1.7299-.5756,2.7209-.5756,1.2836,0,2.407.2653,3.3698.7954.9627.5306,1.7612,1.2662,2.3964,2.2081.6347.9418,1.1125,2.0585,1.4337,3.3488.3208,1.2909.4814,2.6895.4814,4.1965,0,1.3395-.1674,2.5398-.5023,3.5999Z" fill="#070606"/><path d="m109.1926,64.8001v-.4536l.0272-.0597c.0408-.0895.1046-.2804.1769-.6818.0591-.3291.0889-.7336.0889-1.2019,0-.1737-.0068-.3516-.0199-.5327-.0136-.1831-.034-.384-.0612-.6017l-2.5331-19.1091-11.816,22.393-1.9936-.024-12.0729-22.6013c-.4301,2.9401-.8137,5.7118-1.1418,8.2495l-.4604,3.5895c-.1539,1.1915-.2899,2.3034-.4076,3.3342-.1183,1.0256-.213,1.9418-.2821,2.7235-.0685.7723-.103,1.351-.103,1.721,0,.4688.0136.8838.0408,1.2322.0272.3595.0549.6625.0826.9105.0398.2789.0811.5332.1225.7524l.0675.36h-4.8563v-.4819l.0539-.078c.1407-.2051.3077-.5232.496-.9455.1832-.4133.3307-.9486.438-1.5906.1528-.9733.3239-2.0716.5123-3.2923.1883-1.2208.3835-2.5007.586-3.8402.202-1.3384.4045-2.7088.6064-4.1106.202-1.4018.3977-2.7827.5861-4.1426l.5442-3.9348c.1742-1.2616.3312-2.4164.4709-3.4624.1386-1.0444.2538-1.9533.3443-2.7266.0905-.7729.157-1.3542.1988-1.7446l.0288-.2715h3.1133l12.9819,24.2715,12.8787-24.2715h2.4358l3.4686,25.1275c.0963.7744.2009,1.4431.3108,1.991.1099.5499.2208,1.0245.3297,1.4112.1077.384.2129.7043.3134.9518.0989.2438.1941.4452.2841.5991l.0419.0711v.4699h-5.8824Z" fill="#070606"/><path d="m134.7125,64.966c-.1643-.0136-.4112-.0272-.7404-.0408-.3343-.0141-.7069-.0283-1.1171-.0419-.4102-.0141-.8414-.0246-1.2924-.0314l-1.2877-.0209-1.0795-.0209c-.3108-.0068-.5358-.01-.6734-.01h-9.3458v-.4301l.012-.0408c.0801-.2805.1586-.6368.2334-1.0585.0748-.4228.1408-.956.1957-1.5844.0544-.6332.0963-1.3987.1245-2.2751.0278-.8843.0414-1.9266.0414-3.0987v-13.6255c0-1.1715-.0136-2.2138-.0414-3.0986-.0282-.8765-.0701-1.6457-.1245-2.2861-.0549-.6342-.1209-1.1711-.1957-1.5949-.0748-.4223-.1538-.7781-.2334-1.058l-.012-.0408v-.4301h.304c1.743,0,3.476-.0068,5.1985-.021,1.7225-.0136,3.3022-.0308,4.7391-.0518,1.4274-.0209,2.6638-.0528,3.6753-.0941,1.001-.0414,1.6828-.0958,2.0271-.1623l.529-.102-1.3082,3.5503-.2689-.0733c-.4458-.1214-.9774-.2318-1.5792-.3281-.5196-.0816-1.1653-.1622-1.9187-.238-.7509-.0754-1.6242-.1136-2.5964-.1136-.3312,0-.7278.0099-1.1899.0309-.4657.0209-.9136.0455-1.3442.0727l-1.2433.0686v10.8328c1.3056-.0162,2.5054-.057,3.5707-.1214,1.1564-.0696,2.1464-.1397,2.9433-.2088.9424-.0832,1.7806-.181,2.4912-.2909l.4359-.067-.7996,3.7397-.2778-.0361c-.9612-.1256-1.9428-.2433-2.9454-.3553-.8628-.0968-1.8099-.1847-2.8151-.2606-.9-.0675-1.7743-.1057-2.6032-.113v12.5135c1.5154-.0083,2.9292-.0779,4.2075-.2072,1.3641-.1371,2.5749-.2982,3.5984-.4782,1.1878-.1931,2.2835-.4233,3.2604-.6849l.4615-.1235-.7399,4.1336-.2758-.0235Z" fill="#070606"/><path d="m146.7102,65.449c-.8121,0-1.5965-.0764-2.3316-.2261-.7274-.1486-1.4102-.3354-2.0297-.5557-.6164-.2192-1.1784-.461-1.6713-.7179-.4908-.2564-.8989-.495-1.2129-.7095l-.1496-.102.5284-5.0782h1.0382l.0544.235c.1455.6226.3877,1.2244.7195,1.7879.3312.5635.744,1.0674,1.2275,1.497.4814.4291,1.0402.777,1.6618,1.035.6159.2554,1.3019.3846,2.0397.3846.6718,0,1.2798-.102,1.8062-.304.5249-.2009.9806-.4824,1.3547-.8367.3705-.3516.6598-.7775.8592-1.2652.1999-.4913.3014-1.0376.3014-1.6226,0-.833-.1533-1.6132-.4563-2.3185-.3103-.72-.7231-1.4123-1.2265-2.0575-.5107-.6535-1.0993-1.2971-1.7487-1.913-.6619-.6263-1.3405-1.2558-2.0365-1.8899-.6969-.6337-1.3871-1.2956-2.0522-1.968-.6723-.6792-1.2824-1.4154-1.813-2.1866-.5358-.7781-.9733-1.6247-1.3013-2.5164-.3318-.8999-.5003-1.9035-.5003-2.9825,0-1.1433.225-2.1914.6687-3.1138.4411-.9189,1.0356-1.7147,1.7671-2.3662.7289-.6499,1.5671-1.1553,2.4917-1.5022.923-.3459,1.8884-.5217,2.8695-.5217.7127,0,1.3793.0586,1.9821.1732.597.1141,1.1412.2511,1.6184.4071.4761.1569.8973.3155,1.2516.4709l1.0475.4594-.1653,4.4136h-.9686l-.0711-.204c-.1047-.2988-.2752-.6463-.507-1.0319-.2282-.3767-.5327-.7372-.9053-1.0706-.3699-.3312-.8272-.6122-1.3594-.8361-.5253-.2203-1.1579-.3318-1.8811-.3318-.6425,0-1.2176.0984-1.7094.2925-.4856.1916-.8963.4626-1.2197.8053-.3249.3438-.574.7582-.7399,1.2312-.1695.4814-.2548,1.0251-.2548,1.6158,0,.9429.2695,1.8576.8021,2.7183.5521.8927,1.2537,1.788,2.0857,2.6602.843.8848,1.767,1.7812,2.7466,2.6634.9952.8973,1.9323,1.8418,2.7868,2.8077.8628.9769,1.5912,2.014,2.1647,3.0825.586,1.0936.8837,2.2861.8837,3.5445,0,.9366-.1643,1.8889-.4876,2.8303-.326.9486-.8362,1.8114-1.5164,2.5639-.6829.755-1.5692,1.3751-2.6361,1.8434-1.0675.4683-2.3479.7059-3.8056.7059Z" fill="#070606"/></g>
         </svg>
       </a>
-        <div class="estd" data-i18n="brand_caption">Kitchen layout maker</div>
+        <div class="estd">Kitchen layout maker</div>
       </div>
       <div class="hero-iso" aria-hidden="true"><svg id="Make2D::Visible::SceneSilhouetteCurves::Diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1609.1299 464.8665">
   <g>
@@ -766,20 +750,20 @@
   </div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow" data-i18n="hero_eyebrow">Layout intelligence · for builders & homeowners</span>
-      <h1 data-i18n-html="hero_h1">Plan a kitchen<br>that <em>works</em>, not<br>one that wears<br>you out.</h1>
-      <p class="lead" data-i18n="hero_lead">Enter your room. Choose how you like to cook. Get a layout matched to the five activity zones — so every step earns its place.</p>
-      <p class="source" data-i18n-html="hero_source">Walking-distance figures based on the <strong>Blum Inspirations</strong> ergonomics study of kitchen workflow.</p>
+      <span class="eyebrow">Layout intelligence · for builders & homeowners</span>
+      <h1>Plan a kitchen<br>that <em>works</em>, not<br>one that wears<br>you out.</h1>
+      <p class="lead">Enter your room. Choose how you like to cook. Get a layout matched to the five activity zones — so every step earns its place.</p>
+      <p class="source">Walking-distance figures based on the <strong>Blum Inspirations</strong> ergonomics study of kitchen workflow.</p>
     </div>
     <aside class="zone-rail" aria-label="The five activity zones">
-      <h3 data-i18n="zonerail_title">The five activity zones</h3>
-      <p class="sub" data-i18n="zonerail_sub">A good kitchen follows the natural flow of work — left to right, store to serve.</p>
+      <h3>The five activity zones</h3>
+      <p class="sub">A good kitchen follows the natural flow of work — left to right, store to serve.</p>
       <div class="zone-flow">
-        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-consumable)">1</span><span class="zone-meta"><b data-i18n="zone0name">Consumables</b><span data-i18n="zone0desc">Pantry &amp; food storage</span></span><span class="zone-arrow"></span></div>
-        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-nonconsume)">2</span><span class="zone-meta"><b data-i18n="zone1name">Non-consumables</b><span data-i18n="zone1desc">Crockery &amp; cutlery</span></span><span class="zone-arrow"></span></div>
-        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-cleaning)">3</span><span class="zone-meta"><b data-i18n="zone2name">Cleaning</b><span data-i18n="zone2desc">Sink &amp; waste</span></span><span class="zone-arrow"></span></div>
-        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-prep)">4</span><span class="zone-meta"><b data-i18n="zone3name">Preparation</b><span data-i18n="zone3desc">Worktop, knives, spices</span></span><span class="zone-arrow"></span></div>
-        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-cooking)">5</span><span class="zone-meta"><b data-i18n="zone4name">Cooking</b><span data-i18n="zone4desc">Hob, oven, pans</span></span></div>
+        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-consumable)">1</span><span class="zone-meta"><b>Consumables</b><span>Pantry &amp; food storage</span></span><span class="zone-arrow"></span></div>
+        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-nonconsume)">2</span><span class="zone-meta"><b>Non-consumables</b><span>Crockery &amp; cutlery</span></span><span class="zone-arrow"></span></div>
+        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-cleaning)">3</span><span class="zone-meta"><b>Cleaning</b><span>Sink &amp; waste</span></span><span class="zone-arrow"></span></div>
+        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-prep)">4</span><span class="zone-meta"><b>Preparation</b><span>Worktop, knives, spices</span></span><span class="zone-arrow"></span></div>
+        <div class="zone-item"><span class="zone-swatch" style="background:var(--z-cooking)">5</span><span class="zone-meta"><b>Cooking</b><span>Hob, oven, pans</span></span></div>
       </div>
     </aside>
   </div>
@@ -789,78 +773,78 @@
 <section class="calc" id="maker">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="maker_eyebrow">The layout maker</span>
-      <h2 data-i18n="maker_h2">Make your kitchen layout</h2>
-      <p data-i18n="maker_p">Enter your room and we'll suggest a layout, place the five zones, and estimate the daily walking it saves. You can switch layouts and add an island after.</p>
+      <span class="eyebrow">The layout maker</span>
+      <h2>Make your kitchen layout</h2>
+      <p>Enter your room and we'll suggest a layout, place the five zones, and estimate the daily walking it saves. You can switch layouts and add an island after.</p>
     </div>
 
     <div class="calc-grid">
       <!-- LEFT COLUMN -->
       <div class="calc-left">
       <div class="panel">
-        <h3 data-i18n="panel_title">Your room</h3>
-        <p class="hint" data-i18n="panel_hint">Measure the floor area you can build along.</p>
+        <h3>Your room</h3>
+        <p class="hint">Measure the floor area you can build along.</p>
 
         <div class="field">
-          <label data-i18n="label_dims">Room dimensions</label>
+          <label>Room dimensions</label>
           <div class="dims">
             <div class="dim">
               <input id="in-w" type="number" inputmode="decimal" min="1.2" max="12" step="0.1" value="3.6" aria-label="Width in metres">
-              <span class="unit" data-i18n="unit_wide">m wide</span>
+              <span class="unit">m wide</span>
             </div>
             <div class="dim">
               <input id="in-l" type="number" inputmode="decimal" min="1.2" max="12" step="0.1" value="3.0" aria-label="Length in metres">
-              <span class="unit" data-i18n="unit_long">m long</span>
+              <span class="unit">m long</span>
             </div>
           </div>
         </div>
 
         <div class="field">
-          <label data-i18n="label_priority">What matters most?</label>
+          <label>What matters most?</label>
           <div class="seg" id="seg-priority" role="group" aria-label="Priority">
             <button data-v="efficiency" aria-pressed="true">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M6 17c0-6 12-2 12-10"/></svg>
-              <span class="t" data-i18n-html="opt_efficiency">Less walking<small>Shortest daily route</small></span>
+              <span class="t">Less walking<small>Shortest daily route</small></span>
             </button>
             <button data-v="storage" aria-pressed="false">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1.5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="10" y1="8" x2="14" y2="8"/><line x1="10" y1="16" x2="14" y2="16"/></svg>
-              <span class="t" data-i18n-html="opt_storage">More storage<small>Cabinets &amp; pantry</small></span>
+              <span class="t">More storage<small>Cabinets &amp; pantry</small></span>
             </button>
             <button data-v="cooking" aria-pressed="false">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="13.5" r="6"/><line x1="14.8" y1="9.2" x2="21" y2="3.5"/></svg>
-              <span class="t" data-i18n-html="opt_cooking">Prep &amp; cooking<small>Maximum worktop</small></span>
+              <span class="t">Prep &amp; cooking<small>Maximum worktop</small></span>
             </button>
             <button data-v="social" aria-pressed="false">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M16.5 5.6a3 3 0 0 1 0 5.8"/><path d="M17.5 14.2c2 .5 3.3 2.2 3.3 4.3"/></svg>
-              <span class="t" data-i18n-html="opt_social">Open &amp; social<small>Cook facing the room</small></span>
+              <span class="t">Open &amp; social<small>Cook facing the room</small></span>
             </button>
           </div>
         </div>
 
         <div class="field">
-          <label data-i18n="label_island">Room for an island?</label>
+          <label>Room for an island?</label>
           <div class="toggle" id="seg-island" role="group" aria-label="Island">
-            <button data-v="no" aria-pressed="true" data-i18n="island_no">No island</button>
-            <button data-v="yes" aria-pressed="false" data-i18n="island_yes">Yes, if it fits</button>
+            <button data-v="no" aria-pressed="true">No island</button>
+            <button data-v="yes" aria-pressed="false">Yes, if it fits</button>
           </div>
         </div>
 
         <div class="actions">
-          <button class="go" id="go" data-i18n="btn_make">Make my layout</button>
-          <button class="reset" id="reset" type="button" data-i18n="btn_reset">Reset</button>
+          <button class="go" id="go">Make my layout</button>
+          <button class="reset" id="reset" type="button">Reset</button>
         </div>
         <p class="err" id="err" role="alert"></p>
       </div>
 
       <details class="logic-note">
-        <summary data-i18n="logic_summary">How a layout is chosen</summary>
+        <summary>How a layout is chosen</summary>
         <div class="logic-body">
-          <p data-i18n="logic_intro">Every suggestion follows the same rules, so the result is never arbitrary:</p>
+          <p>Every suggestion follows the same rules, so the result is never arbitrary:</p>
           <ol>
-            <li data-i18n-html="logic_li1"><b>Fit first.</b> A layout is only offered if your room clears its real minimums — e.g. a galley needs ~2.2 m between runs; an island needs ~3.2 m of depth (0.6 m counter + 1.1 m walkway + 0.8 m island + access).</li>
-            <li data-i18n-html="logic_li2"><b>Then your priority.</b> <i>Less walking</i> favours the U-shape; <i>more storage</i> the G-shape; <i>prep &amp; cooking</i> the run with the most worktop; <i>open &amp; social</i> the island or L.</li>
-            <li data-i18n-html="logic_li3"><b>Zones in workflow order.</b> Counters always read store → wash → prep → cook (Consumables, Non-consumables, Cleaning, Preparation, Cooking), so the daily route stays short.</li>
-            <li data-i18n-html="logic_li4"><b>The island holds one zone.</b> The hob when you want to cook facing the room; otherwise the sink, keeping heat on the wall near extraction.</li>
+            <li><b>Fit first.</b> A layout is only offered if your room clears its real minimums — e.g. a galley needs ~2.2 m between runs; an island needs ~3.2 m of depth (0.6 m counter + 1.1 m walkway + 0.8 m island + access).</li>
+            <li><b>Then your priority.</b> <i>Less walking</i> favours the U-shape; <i>more storage</i> the G-shape; <i>prep &amp; cooking</i> the run with the most worktop; <i>open &amp; social</i> the island or L.</li>
+            <li><b>Zones in workflow order.</b> Counters always read store → wash → prep → cook (Consumables, Non-consumables, Cleaning, Preparation, Cooking), so the daily route stays short.</li>
+            <li><b>The island holds one zone.</b> The hob when you want to cook facing the room; otherwise the sink, keeping heat on the wall near extraction.</li>
           </ol>
         </div>
       </details>
@@ -870,7 +854,7 @@
       <div class="result" id="result">
         <div class="placeholder" id="placeholder">
           <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M9 9v12"/></svg>
-          <p data-i18n="placeholder">Your suggested layout and the five-zone plan will appear here.</p>
+          <p>Your suggested layout and the five-zone plan will appear here.</p>
         </div>
       </div>
     </div>
@@ -881,15 +865,15 @@
 <section class="research">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="research_eyebrow">Why layout matters</span>
-      <h2 data-i18n="research_h2">A day in the kitchen, measured</h2>
-      <p data-i18n="research_p">Findings from the Blum Inspirations workflow study — the case for designing around how people actually move.</p>
+      <span class="eyebrow">Why layout matters</span>
+      <h2>A day in the kitchen, measured</h2>
+      <p>Findings from the Blum Inspirations workflow study — the case for designing around how people actually move.</p>
     </div>
     <div class="stat-grid">
-      <div class="stat"><div class="n" data-i18n="stat1_n">172 m</div><div class="d" data-i18n="stat1_d">Walked per day in a well-planned kitchen — roughly Chiang Mai to Phuket over 20 years.</div></div>
-      <div class="stat"><div class="n" data-i18n="stat2_n">100×</div><div class="d" data-i18n="stat2_d">Zone changes a day. The shorter the hops between zones, the lighter the routine.</div></div>
-      <div class="stat"><div class="n" data-i18n="stat3_n">~2 hrs</div><div class="d" data-i18n="stat3_d">Spent in the kitchen daily — about 8 working years across two decades.</div></div>
-      <div class="stat"><div class="n" data-i18n="stat4_n">+40%</div><div class="d" data-i18n="stat4_d">Extra distance a single-wall kitchen adds versus the most efficient U-shaped plan.</div></div>
+      <div class="stat"><div class="n">172 m</div><div class="d">Walked per day in a well-planned kitchen — roughly Chiang Mai to Phuket over 20 years.</div></div>
+      <div class="stat"><div class="n">100×</div><div class="d">Zone changes a day. The shorter the hops between zones, the lighter the routine.</div></div>
+      <div class="stat"><div class="n">~2 hrs</div><div class="d">Spent in the kitchen daily — about 8 working years across two decades.</div></div>
+      <div class="stat"><div class="n">+40%</div><div class="d">Extra distance a single-wall kitchen adds versus the most efficient U-shaped plan.</div></div>
     </div>
   </div>
 </section>
@@ -899,10 +883,10 @@
 <section class="cta-band">
   <div class="wrap cta-inner">
     <div>
-      <h2 data-i18n="cta_h2">Ready to build it for real?</h2>
-      <p data-i18n="cta_p">Take your layout to our team and turn it into a kitchen designed around the way you live.</p>
+      <h2>Ready to build it for real?</h2>
+      <p>Take your layout to our team and turn it into a kitchen designed around the way you live.</p>
     </div>
-    <a class="cta-btn" href="https://studiodomes.co" target="_blank" rel="noopener" data-i18n-html="cta_btn">Start your kitchen design with us! &nbsp;→</a>
+    <a class="cta-btn" href="https://studiodomes.co" target="_blank" rel="noopener">Start your kitchen design with us! &nbsp;→</a>
   </div>
 </section>
 
@@ -916,8 +900,8 @@
       </svg>
     </a>
     <div class="foot-meta">
-      <div class="cr">© <span id="year">2025</span> Studio DoMES · <span data-i18n="foot_rights">All rights reserved.</span></div>
-      <div data-i18n="foot_note">Layout guidance based on the Blum Inspirations kitchen ergonomics study. For planning purposes.</div>
+      <div class="cr">© <span id="year">2025</span> Studio DoMES · All rights reserved.</div>
+      <div>Layout guidance based on the Blum Inspirations kitchen ergonomics study. For planning purposes.</div>
     </div>
   </div>
 </footer>
@@ -926,172 +910,6 @@
 (function(){
   "use strict";
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* ===================== i18n ===================== */
-  var LANG = 'en';
-  var I18N = {
-    en: {
-      nav_maker:'The maker', brand_caption:'Kitchen layout maker',
-      hero_eyebrow:'Layout intelligence · for builders & homeowners',
-      hero_h1:'Plan a kitchen<br>that <em>works</em>, not<br>one that wears<br>you out.',
-      hero_lead:'Enter your room. Choose how you like to cook. Get a layout matched to the five activity zones — so every step earns its place.',
-      hero_source:'Walking-distance figures based on the <strong>Blum Inspirations</strong> ergonomics study of kitchen workflow.',
-      zonerail_title:'The five activity zones',
-      zonerail_sub:'A good kitchen follows the natural flow of work — left to right, store to serve.',
-      zone0name:'Consumables', zone0desc:'Pantry & food storage',
-      zone1name:'Non-consumables', zone1desc:'Crockery & cutlery',
-      zone2name:'Cleaning', zone2desc:'Sink & waste',
-      zone3name:'Preparation', zone3desc:'Worktop, knives, spices',
-      zone4name:'Cooking', zone4desc:'Hob, oven, pans',
-      maker_eyebrow:'The layout maker', maker_h2:'Make your kitchen layout',
-      maker_p:"Enter your room and we'll suggest a layout, place the five zones, and estimate the daily walking it saves. You can switch layouts and add an island after.",
-      panel_title:'Your room', panel_hint:'Measure the floor area you can build along.',
-      label_dims:'Room dimensions', unit_wide:'m wide', unit_long:'m long',
-      label_priority:'What matters most?',
-      opt_efficiency:'Less walking<small>Shortest daily route</small>',
-      opt_storage:'More storage<small>Cabinets &amp; pantry</small>',
-      opt_cooking:'Prep &amp; cooking<small>Maximum worktop</small>',
-      opt_social:'Open &amp; social<small>Cook facing the room</small>',
-      label_island:'Room for an island?', island_no:'No island', island_yes:'Yes, if it fits',
-      btn_make:'Make my layout', btn_reset:'Reset',
-      logic_summary:'How a layout is chosen',
-      logic_intro:'Every suggestion follows the same rules, so the result is never arbitrary:',
-      logic_li1:'<b>Fit first.</b> A layout is only offered if your room clears its real minimums — e.g. a galley needs ~2.2 m between runs; an island needs ~3.2 m of depth (0.6 m counter + 1.1 m walkway + 0.8 m island + access).',
-      logic_li2:'<b>Then your priority.</b> <i>Less walking</i> favours the U-shape; <i>more storage</i> the G-shape; <i>prep &amp; cooking</i> the run with the most worktop; <i>open &amp; social</i> the island or L.',
-      logic_li3:'<b>Zones in workflow order.</b> Counters always read store → wash → prep → cook (Consumables, Non-consumables, Cleaning, Preparation, Cooking), so the daily route stays short.',
-      logic_li4:'<b>The island holds one zone.</b> The hob when you want to cook facing the room; otherwise the sink, keeping heat on the wall near extraction.',
-      placeholder:'Your suggested layout and the five-zone plan will appear here.',
-      research_eyebrow:'Why layout matters', research_h2:'A day in the kitchen, measured',
-      research_p:'Findings from the Blum Inspirations workflow study — the case for designing around how people actually move.',
-      stat1_n:'172 m', stat1_d:'Walked per day in a well-planned kitchen — roughly Chiang Mai to Phuket over 20 years.',
-      stat2_n:'100×', stat2_d:'Zone changes a day. The shorter the hops between zones, the lighter the routine.',
-      stat3_n:'~2 hrs', stat3_d:'Spent in the kitchen daily — about 8 working years across two decades.',
-      stat4_n:'+40%', stat4_d:'Extra distance a single-wall kitchen adds versus the most efficient U-shaped plan.',
-      cta_h2:'Ready to build it for real?',
-      cta_p:'Take your layout to our team and turn it into a kitchen designed around the way you live.',
-      cta_btn:'Start your kitchen design with us! &nbsp;→',
-      foot_rights:'All rights reserved.',
-      foot_note:'Layout guidance based on the Blum Inspirations kitchen ergonomics study. For planning purposes.',
-      // dynamic
-      pin_example:'Example layout', pin_suggested:'Suggested layout', pin_your:'Your layout',
-      badge_walk:'est. walked / day', badge_worktop:'worktop run',
-      lf:{u:'U-shaped kitchen',g:'G-shaped kitchen','two-line':'Two-line kitchen',l:'L-shaped kitchen','one-line':'One-line kitchen'},
-      ls:{u:'U-shaped',g:'G-shaped','two-line':'Two-line',l:'L-shaped','one-line':'One-line'},
-      island_suffix:' with island',
-      why_by:{efficiency:'this gives the shortest daily route',storage:'this offers the most storage',cooking:'this gives the most prep and cooking worktop',social:'this makes the most open, sociable kitchen'},
-      why_lead:{
-        u:'Three connected runs keep all five zones within a tight loop — the shortest walking of any layout. Zones flow store → wash → prep → cook around the U.',
-        g:'A U that carries all five zones, plus a return that adds bonus worktop and storage — the most cabinetry of any plan.',
-        'two-line':'Two facing runs: storage and the sink on one wall, prep and cooking opposite — an efficient galley when you have a corridor of space.',
-        l:'Two walls give a relaxed corner workflow — store → wash → prep → cook along the L — and leave the rest of the room open.',
-        'one-line':'A single run along one wall in strict workflow order — store → wash → prep → cook — the simplest fit for narrow or compact spaces.'
-      },
-      why_island_cook:' An island is added 1.1 m off the wall (1.0 × 0.8 m) carrying the hob, so the remaining four zones line the wall and you cook facing the room.',
-      why_island_sink:' A sink island is added 1.1 m off the wall (1.0 × 0.8 m); cooking and prep stay on the wall near the extraction, with washing-up at the centre.',
-      why_selected:' Selected because ',
-      sw_change:'Change the layout', sw_addisland:'+ Add an island', sw_islandadded:'✓ Island added',
-      sw_islandhint:'Island available on one-line, L or U layouts with ≥3.2 m depth',
-      note_label:'Note —',
-      suggest_islandnote:'An island needs roughly 3.2 m of clear depth — about 0.6 m counter, a 1.1 m walkway and a 0.8 m island. Your room is tighter, so here is the best fit without one.',
-      example_note:'<b>This is a live example</b> for a {W} × {L} m room. Enter your own room above and press “Make my layout”.',
-      rank_h:'Estimated daily walking — every layout in your room',
-      rank_selected:'selected', rank_shortest:'shortest', rank_tootight:'too tight', rank_mday:'m/day',
-      rank_note:'Distances scale Blum’s 172 m/day benchmark by your room’s size and each layout’s measured efficiency. Worktop is measured from the plan. A planning guide, not a survey.',
-      err_both:'Enter both a width and a length in metres.',
-      err_min:'A kitchen needs at least 1.2 m on each side.',
-      err_max:'Keep each dimension under 12 m for this planner.',
-      svg_island_cap:'ISLAND', svg_worktop:'+ worktop', unit_m:'m'
-    },
-    th: {
-      nav_maker:'เครื่องมือ', brand_caption:'เครื่องมือจัดผังครัว',
-      hero_eyebrow:'ระบบจัดผังครัวอัจฉริยะ · สำหรับช่างผู้ก่อสร้างหรือเจ้าของบ้านที่ต้องการไอเดีย',
-      hero_h1:'ออกแบบครัวที่<br><em>ใช้งานได้จริง</em><br>ไม่ใช่ครัวที่<br>ทำให้คุณเหนื่อย',
-      hero_lead:'กรอกขนาดห้องหรือพื้นที่ของคุณ เลือกสไตล์การทำครัวที่ชอบ แล้วดูผังที่จัดวางตามห้าโซนการใช้งาน เพื่อให้ทุกก้าวเดินมีความหมาย',
-      hero_source:'ตัวเลขระยะการเดินอ้างอิงจากงานวิจัยด้านการยศาสตร์ครัวของ <strong>Blum Inspirations</strong>',
-      zonerail_title:'ห้าโซนการใช้งานในครัว',
-      zonerail_sub:'ครัวที่ดีจะไหลลื่นตามลำดับการทำงาน ตั้งแต่การจัดเก็บจนถึงเตรียมและเสิร์ฟอาหาร',
-      zone0name:'ของกินได้', zone0desc:'ที่เก็บอาหารและของแห้ง',
-      zone1name:'ของกินไม่ได้', zone1desc:'จานชามและช้อนส้อม',
-      zone2name:'โซนล้าง', zone2desc:'อ่างล้างและถังขยะ',
-      zone3name:'เตรียมอาหาร', zone3desc:'พื้นที่เตรียม มีด เครื่องปรุง',
-      zone4name:'ทำอาหาร', zone4desc:'เตา เตาอบ หม้อกระทะ',
-      maker_eyebrow:'เครื่องมือจัดผัง', maker_h2:'สร้างผังครัวของคุณ',
-      maker_p:'กรอกขนาดห้อง แล้วเราจะแนะนำผัง จัดวางโซนครัว และประเมินระยะเดินต่อวันที่ช่วยประหยัดแรง คุณสามารถสลับผังและเพิ่มไอส์แลนด์ครัวได้ภายหลัง',
-      panel_title:'ห้องของคุณ', panel_hint:'วัดพื้นที่ที่จะติดตั้งครัวได้',
-      label_dims:'ขนาดห้อง', unit_wide:'ม. กว้าง', unit_long:'ม. ยาว',
-      label_priority:'อะไรสำคัญที่สุด?',
-      opt_efficiency:'เดินน้อย<small>เส้นทางต่อวันสั้นที่สุด</small>',
-      opt_storage:'เก็บของได้มาก<small>ตู้และที่เก็บของ</small>',
-      opt_cooking:'เตรียมและทำอาหาร<small>พื้นที่เคาน์เตอร์มากสุด</small>',
-      opt_social:'โปร่งและเข้าสังคม<small>ทำอาหารหันหน้าเข้าห้อง</small>',
-      label_island:'มีพื้นที่ทำเกาะกลางไหม?', island_no:'ไม่มีเกาะ', island_yes:'มี ถ้าพื้นที่พอ',
-      btn_make:'สร้างผังครัว', btn_reset:'รีเซ็ต',
-      logic_summary:'เลือกผังอย่างไร',
-      logic_intro:'ทุกคำแนะนำใช้กฎเดียวกัน ผลลัพธ์จึงไม่ใช่การสุ่ม:',
-      logic_li1:'<b>เริ่มจากความพอดี</b> ผังจะถูกเสนอเมื่อห้องของคุณผ่านขนาดขั้นต่ำจริง เช่น ครัวสองแถวต้องมีช่องว่างระหว่างแถวราว 2.2 ม. และเกาะกลางต้องมีความลึกราว 3.2 ม. (เคาน์เตอร์ 0.6 ม. + ทางเดิน 1.1 ม. + เกาะ 0.8 ม. + พื้นที่ใช้สอย)',
-      logic_li2:'<b>จากนั้นดูสิ่งที่คุณให้ความสำคัญ</b> <i>เดินน้อย</i> เหมาะกับรูปตัว U <i>เก็บของได้มาก</i> เหมาะกับรูปตัว G <i>เตรียมและทำอาหาร</i> เลือกแถวที่มีเคาน์เตอร์มากที่สุด <i>โปร่งและเข้าสังคม</i> เหมาะกับเกาะกลางหรือรูปตัว L',
-      logic_li3:'<b>เรียงโซนตามลำดับงาน</b> เคาน์เตอร์เรียงเสมอ เก็บ → ล้าง → เตรียม → ทำ (ของกินได้ ของกินไม่ได้ โซนล้าง เตรียมอาหาร ทำอาหาร) เพื่อให้เส้นทางเดินสั้น',
-      logic_li4:'<b>เกาะกลางรับหนึ่งโซน</b> วางเตาเมื่อต้องการทำอาหารโดยหันหน้าเข้าห้อง หรือวางอ่างล้างเพื่อให้ความร้อนอยู่ติดผนังใกล้เครื่องดูดควัน',
-      placeholder:'ผังที่แนะนำและห้าโซนจะแสดงที่นี่',
-      research_eyebrow:'ทำไมผังครัวจึงสำคัญ', research_h2:'หนึ่งวันในครัว ที่วัดได้จริง',
-      research_p:'ผลการศึกษาการทำงานในครัวจาก Blum Inspirations — เหตุผลของการออกแบบตามการเคลื่อนไหวจริงของผู้ใช้',
-      stat1_n:'172 ม.', stat1_d:'เดินต่อวันในครัวที่วางผังดี — ราวเชียงใหม่ถึงภูเก็ตในเวลา 20 ปี',
-      stat2_n:'100×', stat2_d:'การเปลี่ยนโซนต่อวัน ยิ่งระยะระหว่างโซนสั้น กิจวัตรยิ่งเบาแรง',
-      stat3_n:'~2 ชม.', stat3_d:'ใช้เวลาในครัวต่อวัน — ราว 8 ปีทำงานในเวลาสองทศวรรษ',
-      stat4_n:'+40%', stat4_d:'ระยะที่เพิ่มขึ้นของครัวแถวเดียวเมื่อเทียบกับผังตัว U ที่มีประสิทธิภาพสูงสุด',
-      cta_h2:'พร้อมลงมือสร้างจริงหรือยัง?',
-      cta_p:'นำผังของคุณมาหาทีมงานของเรา แล้วเปลี่ยนให้เป็นครัวที่ออกแบบรอบวิถีชีวิตของคุณ',
-      cta_btn:'เริ่มออกแบบครัวกับเรา! &nbsp;→',
-      foot_rights:'สงวนลิขสิทธิ์',
-      foot_note:'คำแนะนำผังอ้างอิงจากงานวิจัยการยศาสตร์ครัวของ Blum Inspirations เพื่อการวางแผนเท่านั้น',
-      pin_example:'ผังตัวอย่าง', pin_suggested:'ผังที่แนะนำ', pin_your:'ผังของคุณ',
-      badge_walk:'เดินต่อวัน (ประมาณ)', badge_worktop:'แนวเคาน์เตอร์',
-      lf:{u:'ครัวรูปตัว U',g:'ครัวรูปตัว G','two-line':'ครัวสองแถว',l:'ครัวรูปตัว L','one-line':'ครัวแถวเดียว'},
-      ls:{u:'ตัว U',g:'ตัว G','two-line':'สองแถว',l:'ตัว L','one-line':'แถวเดียว'},
-      island_suffix:' พร้อมเกาะกลาง',
-      why_by:{efficiency:'ให้เส้นทางเดินต่อวันสั้นที่สุด',storage:'ให้พื้นที่จัดเก็บมากที่สุด',cooking:'ให้พื้นที่เตรียมและทำอาหารมากที่สุด',social:'ทำให้ครัวโปร่งและเข้าสังคมที่สุด'},
-      why_lead:{
-        u:'สามแนวที่เชื่อมต่อกันรวมห้าโซนไว้เป็นวงแคบ จึงเดินน้อยที่สุดในบรรดาผังทั้งหมด โซนไหลจาก เก็บ → ล้าง → เตรียม → ทำ รอบตัว U',
-        g:'ตัว U ที่รวมครบห้าโซน พร้อมแนวต่อที่เพิ่มเคาน์เตอร์และที่เก็บของ มีตู้มากที่สุดในบรรดาผังทั้งหมด',
-        'two-line':'สองแนวหันหน้าเข้าหากัน เก็บของและอ่างล้างอยู่ผนังหนึ่ง เตรียมและทำอาหารอยู่ฝั่งตรงข้าม เหมาะกับพื้นที่แบบทางเดิน',
-        l:'สองผนังให้การทำงานแบบเข้ามุมที่ผ่อนคลาย เก็บ → ล้าง → เตรียม → ทำ ตามแนวตัว L และเปิดพื้นที่ส่วนที่เหลือของห้อง',
-        'one-line':'แนวเดียวตามผนังเรียงตามลำดับงานอย่างเคร่งครัด เก็บ → ล้าง → เตรียม → ทำ เป็นทางเลือกที่ง่ายที่สุดสำหรับห้องแคบหรือกะทัดรัด'
-      },
-      why_island_cook:' เพิ่มเกาะกลางห่างจากผนัง 1.1 ม. (ขนาด 1.0 × 0.8 ม.) สำหรับวางเตา อีกสี่โซนจึงเรียงตามผนัง และคุณทำอาหารโดยหันหน้าเข้าห้อง',
-      why_island_sink:' เพิ่มเกาะอ่างล้างห่างจากผนัง 1.1 ม. (ขนาด 1.0 × 0.8 ม.) ส่วนการทำและเตรียมอาหารยังอยู่ติดผนังใกล้เครื่องดูดควัน โดยมีจุดล้างอยู่ตรงกลาง',
-      why_selected:' เลือกเพราะ',
-      sw_change:'เปลี่ยนผัง', sw_addisland:'+ เพิ่มเกาะกลาง', sw_islandadded:'✓ เพิ่มเกาะแล้ว',
-      sw_islandhint:'เกาะกลางใช้ได้กับผังแถวเดียว ตัว L หรือ ตัว U ที่มีความลึกตั้งแต่ 3.2 ม.',
-      note_label:'หมายเหตุ —',
-      suggest_islandnote:'เกาะกลางต้องการความลึกโล่งราว 3.2 ม. (เคาน์เตอร์ 0.6 ม. ทางเดิน 1.1 ม. และเกาะ 0.8 ม.) ห้องของคุณแคบกว่านั้น นี่จึงเป็นผังที่เหมาะที่สุดแบบไม่มีเกาะ',
-      example_note:'<b>นี่คือตัวอย่างจริง</b> สำหรับห้องขนาด {W} × {L} ม. กรอกขนาดห้องของคุณด้านบนแล้วกด “สร้างผังครัว”',
-      rank_h:'ระยะเดินต่อวันโดยประมาณ — ทุกผังในห้องของคุณ',
-      rank_selected:'เลือกอยู่', rank_shortest:'สั้นที่สุด', rank_tootight:'พื้นที่ไม่พอ', rank_mday:'ม./วัน',
-      rank_note:'ระยะทางคำนวณจากค่ามาตรฐาน 172 ม./วัน ของ Blum ปรับตามขนาดห้องและประสิทธิภาพของแต่ละผัง ส่วนแนวเคาน์เตอร์วัดจากผังจริง เป็นแนวทางวางแผน ไม่ใช่ผลสำรวจ',
-      err_both:'กรุณากรอกทั้งความกว้างและความยาวเป็นเมตร',
-      err_min:'ครัวต้องมีอย่างน้อย 1.2 ม. ในแต่ละด้าน',
-      err_max:'เครื่องมือนี้รองรับขนาดด้านละไม่เกิน 12 ม.',
-      svg_island_cap:'เกาะกลาง', svg_worktop:'+ เคาน์เตอร์เสริม', unit_m:'ม.'
-    }
-  };
-  function T(k){ var d=I18N[LANG]; return (d && d[k]!=null) ? d[k] : (I18N.en[k]!=null?I18N.en[k]:k); }
-  function zoneName(i){ return T('zone'+i+'name'); }
-  function layoutFull(key){ return I18N[LANG].lf[key]||key; }
-  function layoutShort(key){ return I18N[LANG].ls[key]||key; }
-
-  function applyI18n(){
-    document.body.classList.toggle('lang-th', LANG==='th');
-    document.documentElement.lang = LANG;
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var v=T(el.getAttribute('data-i18n')); if(v!=null) el.textContent=v;
-    });
-    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
-      var v=T(el.getAttribute('data-i18n-html')); if(v!=null) el.innerHTML=v;
-    });
-    document.querySelectorAll('#lang-toggle button').forEach(function(b){
-      b.setAttribute('aria-pressed', b.getAttribute('data-lang')===LANG ? 'true':'false');
-    });
-  }
 
   /* ---- zone definitions (workflow order) ---- */
   var ZONES = [
@@ -1165,7 +983,7 @@
     // island explicitly requested
     if(island === 'yes'){
       if(feasible('island', W, L)) return {pick:'island', note:''};
-      note = T('suggest_islandnote');
+      note = 'An island needs roughly 3.2 m of clear depth — about 0.6 m counter, a 1.1 m walkway and a 0.8 m island. Your room is tighter, so here is the best fit without one.';
     }
     var order = PREF[priority] || PREF.efficiency;
     for(var i=0;i<order.length;i++){
@@ -1220,7 +1038,7 @@
     var ox=(VW-rw)/2, oy=(VH-rh)/2;
     var d = 0.60 * sc; // counter depth = 60 cm, true to room scale
     var off = d/2;
-    var ttl = layoutFull(base) + (islandOn ? T('island_suffix') : '');
+    var ttl = LAYOUTS[base].name + (islandOn ? ' with island' : '');
 
     var svg = '<svg viewBox="0 0 '+VW+' '+VH+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+ttl+' floor plan">';
 
@@ -1268,17 +1086,14 @@
     }
 
     var segMarkup='', labels='', sIndex=0;
-    var centersPx={}, worktopPx=0;
 
     function drawRun(run){
       var zs=run.zones, p=run.poly, total=polyLen(p), each=total/zs.length;
-      worktopPx += total;
       for(var i=0;i<zs.length;i++){
         var z=ZONES[zs[i]];
         var part=sub(p, each*i, each*(i+1));
         segMarkup += '<polyline class="zone-seg" style="animation-delay:'+(sIndex*70)+'ms" points="'+poly(part)+'" fill="none" stroke="'+z.color+'" stroke-width="'+d+'" stroke-linecap="butt" stroke-linejoin="miter"/>';
         var m=mid(part);
-        centersPx[zs[i]]=m;
         labels += '<text x="'+m[0].toFixed(1)+'" y="'+(m[1]+4).toFixed(1)+'" text-anchor="middle" font-family="Chivo,sans-serif" font-size="13" font-weight="700" fill="#fff">'+z.short+'</text>';
         sIndex++;
       }
@@ -1288,23 +1103,20 @@
     // neutral peninsula (G-shaped bonus worktop)
     if(peninsula){
       var pr=peninsula;
-      worktopPx += pr.w;
       segMarkup += '<rect class="zone-seg" style="animation-delay:'+(sIndex*70)+'ms" x="'+pr.x+'" y="'+pr.y+'" width="'+pr.w+'" height="'+pr.h+'" fill="#d8d0bf" stroke="rgba(34,30,24,.2)" stroke-width="1" rx="2"/>';
-      labels += '<text x="'+(pr.x+pr.w/2).toFixed(1)+'" y="'+(pr.y+pr.h/2+4).toFixed(1)+'" text-anchor="middle" font-family="Chivo, \'Noto Sans Thai\', sans-serif" font-size="10.5" letter-spacing=".5" fill="rgba(34,30,24,.6)">'+T('svg_worktop')+'</text>';
+      labels += '<text x="'+(pr.x+pr.w/2).toFixed(1)+'" y="'+(pr.y+pr.h/2+4).toFixed(1)+'" text-anchor="middle" font-family="Chivo,sans-serif" font-size="10.5" letter-spacing=".5" fill="rgba(34,30,24,.6)">+ worktop</text>';
       sIndex++;
     }
 
     // island: a single-zone freestanding block, with the 1.1 m walkway dimensioned
     if(islandRect){
       var ir=islandRect, z=ZONES[ir.zone];
-      centersPx[ir.zone]=[ir.cx, ir.y+ir.h/2];
-      worktopPx += ir.w;
       // walkway dimension line between counter and island
       svg += '<line x1="'+ir.cx.toFixed(1)+'" y1="'+ir.gapBot.toFixed(1)+'" x2="'+ir.cx.toFixed(1)+'" y2="'+ir.gapTop.toFixed(1)+'" stroke="rgba(34,30,24,.35)" stroke-width="1" stroke-dasharray="3 3"/>';
-      svg += '<text x="'+(ir.cx+7).toFixed(1)+'" y="'+((ir.gapTop+ir.gapBot)/2+3).toFixed(1)+'" font-family="Chivo, \'Noto Sans Thai\', sans-serif" font-size="10.5" fill="rgba(34,30,24,.6)">1.1 '+T('unit_m')+'</text>';
+      svg += '<text x="'+(ir.cx+7).toFixed(1)+'" y="'+((ir.gapTop+ir.gapBot)/2+3).toFixed(1)+'" font-family="Chivo,sans-serif" font-size="10.5" fill="rgba(34,30,24,.6)">1.1 m</text>';
       segMarkup += '<rect class="zone-seg" style="animation-delay:'+(sIndex*70)+'ms" x="'+ir.x+'" y="'+ir.y+'" width="'+ir.w+'" height="'+ir.h+'" fill="'+z.color+'" rx="2"/>';
       labels += '<text x="'+(ir.x+ir.w/2).toFixed(1)+'" y="'+(ir.y+ir.h/2+4).toFixed(1)+'" text-anchor="middle" font-family="Chivo,sans-serif" font-size="13" font-weight="700" fill="#fff">'+z.short+'</text>';
-      labels += '<text x="'+(ir.x+ir.w/2).toFixed(1)+'" y="'+(ir.y-7).toFixed(1)+'" text-anchor="middle" font-family="Chivo, \'Noto Sans Thai\', sans-serif" font-size="9.5" letter-spacing="1.4" fill="rgba(34,30,24,.55)">'+T('svg_island_cap')+' · '+zoneName(ir.zone)+'</text>';
+      labels += '<text x="'+(ir.x+ir.w/2).toFixed(1)+'" y="'+(ir.y-7).toFixed(1)+'" text-anchor="middle" font-family="Chivo,sans-serif" font-size="9.5" letter-spacing="1.4" fill="rgba(34,30,24,.55)">ISLAND · '+z.name.toUpperCase()+'</text>';
       sIndex++;
     }
 
@@ -1324,23 +1136,11 @@
     }
 
     // dimension labels
-    svg += '<text x="'+(ox+rw/2)+'" y="'+(oy+rh+30)+'" text-anchor="middle" font-family="Chivo, \'Noto Sans Thai\', sans-serif" font-size="13" fill="rgba(34,30,24,.6)">'+W.toFixed(1)+' '+T('unit_m')+'</text>';
-    svg += '<text x="'+(ox-26)+'" y="'+(oy+rh/2)+'" text-anchor="middle" font-family="Chivo, \'Noto Sans Thai\', sans-serif" font-size="13" fill="rgba(34,30,24,.6)" transform="rotate(-90 '+(ox-26)+' '+(oy+rh/2)+')">'+L.toFixed(1)+' '+T('unit_m')+'</text>';
+    svg += '<text x="'+(ox+rw/2)+'" y="'+(oy+rh+30)+'" text-anchor="middle" font-family="Chivo,sans-serif" font-size="13" fill="rgba(34,30,24,.6)">'+W.toFixed(1)+' m</text>';
+    svg += '<text x="'+(ox-26)+'" y="'+(oy+rh/2)+'" text-anchor="middle" font-family="Chivo,sans-serif" font-size="13" fill="rgba(34,30,24,.6)" transform="rotate(-90 '+(ox-26)+' '+(oy+rh/2)+')">'+L.toFixed(1)+' m</text>';
 
     svg += '</svg>';
-    return { svg:svg, centersPx:centersPx, sc:sc, worktopM:worktopPx/sc };
-  }
-
-  /* ===== walking-distance estimate =====
-     Blum measured how much each layout shape adds vs the efficient U (172 m/day).
-     We keep that ordering and scale it by the room's size, so the figure responds
-     to the actual room while never contradicting the research. */
-  var FACTOR = {u:1.00, island:1.05, g:1.06, 'two-line':1.11, l:1.24, 'one-line':1.40};
-  var REF_AREA = 12; // the 4 × 3 m reference room behind Blum's 172 m benchmark
-  function sizeScale(W, L){ return Math.sqrt((W*L)/REF_AREA); }
-  function walkFor(base, W, L, islandOn){
-    var f = islandOn ? FACTOR.island : (FACTOR[base]||1);
-    return Math.round(BASE_DIST * f * sizeScale(W, L));
+    return svg;
   }
 
   /* ===== interactive state ===== */
@@ -1351,9 +1151,9 @@
   function canIsland(base, W, L){ return !!ISLAND_CAPABLE[base] && feasible('island', W, L); }
 
   /* first run: pick a layout from the inputs, then hand control to the user */
-  function startFromInputs(W, L, isExample){
+  function startFromInputs(W, L){
     var s = suggest(W, L);
-    ST.W=W; ST.L=L; ST.note=s.note; ST.fromSuggestion=true; ST.isExample=!!isExample;
+    ST.W=W; ST.L=L; ST.note=s.note; ST.fromSuggestion=true;
     if(s.pick==='island'){ ST.base='one-line'; ST.island=true; }
     else { ST.base=s.pick; ST.island=false; }
     paint();
@@ -1366,79 +1166,64 @@
     ST.island = islandOn; // keep state honest
     var iZone = islandZoneFor(priority);
 
-    var name = layoutFull(base) + (islandOn ? T('island_suffix') : '');
-    var pinTxt = ST.isExample ? T('pin_example') : (ST.fromSuggestion ? T('pin_suggested') : T('pin_your'));
-
-    // build the selected plan + its computed metrics
-    var plan = buildPlan(base, W, L, islandOn, iZone);
-    var dist = walkFor(base, W, L, islandOn);
-    var worktop = plan.worktopM;
+    // identity + efficiency. An island layout maps to Blum's "Island kitchen" category.
+    var effKey = islandOn ? 'island' : base;
+    var info = LAYOUTS[effKey];
+    var name = LAYOUTS[base].name + (islandOn ? ' with island' : '');
+    var dist = Math.round(BASE_DIST * (1 + info.extra/100));
+    var effLabel = info.extra===0 ? 'Best in class' : (info.range || ('+'+info.extra+'%'));
+    var pinTxt = ST.fromSuggestion ? 'Suggested layout' : 'Your layout';
 
     var why = whyText(base, islandOn, priority, iZone);
 
-    // comparison ranking: every base shape, scaled for THIS room, by walking distance
-    var rows = BASES.map(function(b){
-      var f = feasible(b, W, L);
-      return { key:b, feasible:f, dist: f ? walkFor(b, W, L, false) : null };
-    });
-    var feas = rows.filter(function(r){return r.feasible;});
-    var minD = Math.min.apply(null, feas.map(function(r){return r.dist;}));
-    var maxD = Math.max.apply(null, feas.map(function(r){return r.dist;}));
-    rows.sort(function(a,b){
-      if(a.feasible!==b.feasible) return a.feasible?-1:1;
-      return (a.dist||1e9)-(b.dist||1e9);
-    });
-    var rankHTML='';
-    rows.forEach(function(r){
-      var sel = (r.key===base);
-      var pct = (r.feasible && maxD>minD) ? (100 - ((r.dist-minD)/(maxD-minD))*78) : (r.feasible?100:8);
-      var extra = (r.feasible && r.dist>minD) ? ' <em>+'+Math.round((r.dist/minD-1)*100)+'%</em>' : (r.feasible && r.dist===minD ? ' <em>'+T('rank_shortest')+'</em>' : '');
-      rankHTML += '<div class="rank '+(sel?'is-pick':'')+' '+(r.feasible?'':'dim')+'">'
-        + '<div class="rn">'+layoutShort(r.key)+(sel?' <em>'+T('rank_selected')+'</em>':(r.feasible?extra:' <em>'+T('rank_tootight')+'</em>'))+'</div>'
+    // comparison ranking (all six Blum categories)
+    var rankKeys = Object.keys(LAYOUTS).sort(function(a,b){return LAYOUTS[a].extra-LAYOUTS[b].extra;});
+    var maxExtra = 40, rankHTML='';
+    rankKeys.forEach(function(k){
+      var f = feasible(k, W, L) || (k===effKey);
+      var li = LAYOUTS[k];
+      var pct = 100 - (li.extra/maxExtra)*82;
+      var dd = Math.round(BASE_DIST*(1+li.extra/100));
+      rankHTML += '<div class="rank '+(k===effKey?'is-pick':'')+' '+(f?'':'dim')+'">'
+        + '<div class="rn">'+li.name.replace(' kitchen','')+(k===effKey?'<em>Selected</em>':(f?'':'<em>Too tight</em>'))+'</div>'
         + '<div class="bar"><span style="width:0%" data-w="'+pct.toFixed(0)+'"></span></div>'
-        + '<div class="rv">'+(r.feasible? r.dist+' '+T('rank_mday') : '—')+'</div></div>';
+        + '<div class="rv">'+dd+' m/day</div></div>';
     });
 
-    var legend = ZONES.map(function(z, i){
-      return '<span class="li"><span class="dot" style="background:'+z.color+'"></span>'+z.short+'. '+zoneName(i)+'</span>';
+    var legend = ZONES.map(function(z){
+      return '<span class="li"><span class="dot" style="background:'+z.color+'"></span>'+z.short+'. '+z.name+'</span>';
     }).join('');
 
     // layout switcher
     var swBtns = BASES.map(function(b){
       var ok = feasible(b, W, L);
       return '<button class="sw-btn" data-base="'+b+'" aria-pressed="'+(b===base)+'" '+(ok?'':'disabled')+'>'
-        + layoutShort(b) + '</button>';
+        + LAYOUTS[b].name.replace(' kitchen','') + '</button>';
     }).join('');
     var islandOk = canIsland(base, W, L);
     var islandBtn = '<button class="island-btn" id="island-btn" aria-pressed="'+islandOn+'" '+(islandOk?'':'disabled')+'>'
-      + (islandOn?T('sw_islandadded'):T('sw_addisland')) + '</button>';
-    var islandHint = islandOk ? '' : '<span class="sw-hint">'+T('sw_islandhint')+'</span>';
+      + (islandOn?'✓ Island added':'+ Add an island') + '</button>';
+    var islandHint = islandOk ? '' : '<span class="sw-hint">Island available on one-line, L or U layouts with ≥3.2 m depth</span>';
 
     var switcher = '<div class="switcher">'
-      + '<div class="sw-head">'+T('sw_change')+'</div>'
+      + '<div class="sw-head">Change the layout</div>'
       + '<div class="sw-row">'+swBtns+'</div>'
       + '<div class="sw-island">'+islandBtn+islandHint+'</div>'
       + '</div>';
 
-    var noteHTML = (!ST.isExample && ST.fromSuggestion && ST.note) ? '<p class="why" style="color:var(--accent-dark)"><b>'+T('note_label')+'</b> '+ST.note+'</p>' : '';
-    var exampleHTML = ST.isExample ? '<p class="why" style="color:var(--accent-dark)">'+T('example_note').replace('{W}',W.toFixed(1)).replace('{L}',L.toFixed(1))+'</p>' : '';
+    var noteHTML = (ST.fromSuggestion && ST.note) ? '<p class="why" style="color:var(--accent-dark)"><b>Note —</b> '+ST.note+'</p>' : '';
 
     var html = ''
       + '<div class="result-top">'
         + '<div class="result-name"><span class="pin">'+pinTxt+'</span>'+name+'</div>'
-        + '<div class="badge">'
-          + '<div class="big">'+dist+' '+T('unit_m')+'</div><div class="lbl">'+T('badge_walk')+'</div>'
-          + '<div class="big2">'+worktop.toFixed(1)+' '+T('unit_m')+'</div><div class="lbl">'+T('badge_worktop')+'</div>'
-        + '</div>'
+        + '<div class="badge"><div class="big">'+dist+' m</div><div class="lbl">walked / day · '+effLabel+'</div></div>'
       + '</div>'
-      + '<div class="plan-stage" id="stage">'+plan.svg+'</div>'
+      + '<div class="plan-stage" id="stage">'+buildPlan(base, W, L, islandOn, iZone)+'</div>'
       + switcher
       + '<p class="why">'+why+'</p>'
-      + exampleHTML
       + noteHTML
       + '<div class="legend-row">'+legend+'</div>'
-      + '<div class="ranking"><h4>'+T('rank_h')+'</h4>'+rankHTML
-        + '<p class="rank-note">'+T('rank_note')+'</p></div>';
+      + '<div class="ranking"><h4>How the layouts compare for your room</h4>'+rankHTML+'</div>';
 
     var box = document.getElementById('result');
     box.innerHTML = html;
@@ -1448,7 +1233,7 @@
       btn.addEventListener('click', function(){
         if(btn.hasAttribute('disabled')) return;
         ST.base = btn.getAttribute('data-base');
-        ST.fromSuggestion = false; ST.isExample = false;
+        ST.fromSuggestion = false;
         if(!canIsland(ST.base, ST.W, ST.L)) ST.island=false;
         paint();
       });
@@ -1456,7 +1241,7 @@
     var ib = document.getElementById('island-btn');
     if(ib){ ib.addEventListener('click', function(){
       if(ib.hasAttribute('disabled')) return;
-      ST.island = !ST.island; ST.fromSuggestion=false; ST.isExample=false; paint();
+      ST.island = !ST.island; ST.fromSuggestion=false; paint();
     });}
 
     requestAnimationFrame(function(){
@@ -1466,13 +1251,29 @@
   }
 
   function whyText(base, islandOn, pr, iZone){
-    var by = T('why_by')[pr];
-    var lead = T('why_lead')[base];
+    var by = {
+      efficiency:'this gives the shortest daily route',
+      storage:'this offers the most storage',
+      cooking:'this gives the most prep and cooking worktop',
+      social:'this makes the most open, sociable kitchen'
+    }[pr];
+
+    var lead = {
+      'u':'Three connected runs keep all five zones within a tight loop — the shortest walking of any layout. Zones flow store → wash → prep → cook around the U.',
+      'g':'A U that carries all five zones, plus a return that adds bonus worktop and storage — the most cabinetry of any plan.',
+      'two-line':'Two facing runs: storage and the sink on one wall, prep and cooking opposite — an efficient galley when you have a corridor of space.',
+      'l':'Two walls give a relaxed corner workflow — store → wash → prep → cook along the L — and leave the rest of the room open.',
+      'one-line':'A single run along one wall in strict workflow order — store → wash → prep → cook — the simplest fit for narrow or compact spaces.'
+    }[base];
+
     var islandLine = '';
     if(islandOn){
-      islandLine = (iZone===4) ? T('why_island_cook') : T('why_island_sink');
+      islandLine = (iZone===4)
+        ? ' An island is added 1.1 m off the wall (1.0 × 0.8 m) carrying the hob, so the remaining four zones line the wall and you cook facing the room.'
+        : ' A sink island is added 1.1 m off the wall (1.0 × 0.8 m); cooking and prep stay on the wall near the extraction, with washing-up at the centre.';
     }
-    return '<b>'+lead+'</b>'+islandLine+T('why_selected')+by+'.';
+
+    return '<b>'+lead+'</b>'+islandLine+' Selected because '+by+'.';
   }
 
   /* ---- validation + submit ---- */
@@ -1480,9 +1281,9 @@
     var W = parseFloat(document.getElementById('in-w').value);
     var L = parseFloat(document.getElementById('in-l').value);
     var err = document.getElementById('err');
-    if(isNaN(W)||isNaN(L)){err.textContent=T('err_both');return null;}
-    if(W<1.2||L<1.2){err.textContent=T('err_min');return null;}
-    if(W>12||L>12){err.textContent=T('err_max');return null;}
+    if(isNaN(W)||isNaN(L)){err.textContent='Enter both a width and a length in metres.';return null;}
+    if(W<1.2||L<1.2){err.textContent='A kitchen needs at least 1.2 m on each side.';return null;}
+    if(W>12||L>12){err.textContent='Keep each dimension under 12 m for this planner.';return null;}
     err.textContent='';
     return {W:W,L:L};
   }
@@ -1507,7 +1308,8 @@
     setGroup('seg-priority','efficiency'); priority='efficiency';
     setGroup('seg-island','no'); island='no';
     document.getElementById('err').textContent='';
-    startFromInputs(3.6, 3.0, true);
+    ST = {W:null, L:null, base:'u', island:false, fromSuggestion:true, note:''};
+    showPlaceholder();
     document.getElementById('maker').scrollIntoView({behavior:'smooth', block:'start'});
   });
 
@@ -1517,20 +1319,6 @@
       if(e.key==='Enter'){ document.getElementById('go').click(); }
     });
   });
-
-  // language toggle
-  document.getElementById('lang-toggle').addEventListener('click', function(e){
-    var b=e.target.closest('button'); if(!b) return;
-    var lang=b.getAttribute('data-lang'); if(lang===LANG) return;
-    LANG=lang;
-    applyI18n();
-    if(ST.W) paint(); // re-render the dynamic result in the new language
-  });
-
-  // initial render
-  applyI18n();
-  // show a live example plan on load so the payoff is visible immediately
-  startFromInputs(3.6, 3.0, true);
 })();
 </script>
 </body>
